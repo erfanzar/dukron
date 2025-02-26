@@ -5,6 +5,14 @@ __pycache__/
 
 # C extensions
 *.so
+*.so
+*_bench
+
+# Beta pkg
+*_triton_k_
+*_pallas_k_
+*_beta_kernel.py
+triangular_mm_triton.py
 
 # Distribution / packaging
 .Python

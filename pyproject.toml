@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "dukron"
+version = "0.0.0"
+
+description = "a faster implementation of PSGD Kron second-order optimizer"
+authors = ["Erfan Zare Chavoshi <Erfanzare810@gmail.com>"]
+license = "CC-BY-4.0"
+readme = "README.md"
+
+homepage = "https://github.com/erfanzar/dukron"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+eformer = ">=0.0.13"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "B"]
+ignore = ["E501", "B905", "B007"]
+unfixable = ["B"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["E402", "F401"]
+"**/{tests,docs,tools}/*" = ["E402"]
+"tests/*" = ["E402", "E731"]
+"test/*" = ["E402", "E731"]
+"benchmarks/*" = ["E402", "E731"]
+"triton_*" = ["E741", "ISC001", "E501", "E731"]
+"pallas_*" = ["E741", "ISC001", "E501", "E731"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "tab"
+docstring-code-format = true
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+indent-width = 2
